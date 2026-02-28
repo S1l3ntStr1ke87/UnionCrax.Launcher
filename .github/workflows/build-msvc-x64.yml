@@ -35,7 +35,6 @@ jobs:
 
       - name: Copy .ini File to Zip
         run: |
-          mkdir artifact
           copy union-crax.ini out/build/x64-Release/bin/
 
       - name: Upload artifact
