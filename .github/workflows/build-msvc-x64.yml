@@ -33,9 +33,14 @@ jobs:
       - name: Build
         run: cmake --build out/build/x64-Release --config Release
 
+      - name: Copy .ini File to Zip
+        run: |
+          mkdir artifact
+          copy union-crax.ini out/build/x64-Release/bin/
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: UC_Launcher-x64
-          path: out/build/x64-Release/bin/uc.launcher.exe
+          path: out/build/x64-Release/bin/
           if-no-files-found: error
